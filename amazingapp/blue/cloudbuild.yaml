@@ -16,4 +16,6 @@ steps:
     - 'managed'
     - '--allow-unauthenticated'
 images:
-  - gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA
+  - gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA\
+
+logsBucket: 'gs://devops-storagebucket-1/'
