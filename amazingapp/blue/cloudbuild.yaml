@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA', './blue']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA']
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -16,6 +16,6 @@ steps:
     - 'managed'
     - '--allow-unauthenticated'
 images:
-  - gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA
+  - 'gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA'
 
 logsBucket: 'gs://devops-storagebucket-1/'
